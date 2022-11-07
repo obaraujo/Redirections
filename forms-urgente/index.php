@@ -15,6 +15,36 @@
     <button type="submit">Salvar</button>
   </form>
 
+  <?php
+  include("../core/index.php");
+
+  $data = $conn->query("SELECT * FROM `links`")->fetch_all();
+
+  ?>
+  <table>
+    <thead>
+      <th>Link</th>
+      <th>Original</th>
+      <th>Descrição</th>
+    </thead>
+    <tbody>
+      <tr>
+        <td></td>
+      </tr>
+      <?php
+      foreach ($data as $row) {
+        echo "  
+          <tr>
+            <td>https://stagon.in/r?id={$row[1]}</td>
+            <td>{$row[4]}</td>
+            <td>{$row[5]}</td>
+          </tr>
+          ";
+      }
+      ?>
+    </tbody>
+
+  </table>
   <script>
     document.form.addEventListener('submit', (e) => {
 
