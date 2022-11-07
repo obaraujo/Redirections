@@ -11,7 +11,7 @@
 <body>
   <form name="form">
     <input type="url" name="original_link" placeholder="URL Original">
-    <textarea name="description1" cols="30" rows="1" placeholder="Descrição"></textarea>
+    <textarea name="description" cols="30" rows="1" placeholder="Descrição"></textarea>
     <button type="submit">Salvar</button>
   </form>
 
