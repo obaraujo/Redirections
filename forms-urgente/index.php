@@ -26,6 +26,7 @@
       <th>Link</th>
       <th>Original</th>
       <th>Descrição</th>
+      <th>Click</th>
     </thead>
     <tbody>
       <tr>
@@ -38,6 +39,7 @@
             <td>https://stagon.in/r?id={$row[1]}</td>
             <td>{$row[4]}</td>
             <td>{$row[5]}</td>
+            <td>{$conn->query("SELECT COUNT(*) FROM `clicks` WHERE link_id = " .$row[0])->fetch_row()[0]}</td>
           </tr>
           ";
       }
