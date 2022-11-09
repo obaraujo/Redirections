@@ -23,9 +23,9 @@
   ?>
   <table>
     <thead>
-      <th>Link</th>
       <th>Original</th>
       <th>Descrição</th>
+      <th>Link</th>
       <th>Clicks</th>
     </thead>
     <tbody>
@@ -33,9 +33,9 @@
       foreach ($data as $row) {
         echo "  
           <tr>
-            <td>https://stagon.in/r?id={$row[1]}</td>
             <td>{$row[4]}</td>
             <td>{$row[5]}</td>
+            <td>https://stagon.in/r?id={$row[1]}</td>
             <td>{$conn->query("SELECT COUNT(*) FROM `clicks` WHERE link_id = " .$row[0])->fetch_row()[0]}</td>
           </tr>
           ";
