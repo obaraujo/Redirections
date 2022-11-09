@@ -26,12 +26,9 @@
       <th>Link</th>
       <th>Original</th>
       <th>Descrição</th>
-      <th>Click</th>
+      <th>Clicks</th>
     </thead>
     <tbody>
-      <tr>
-        <td></td>
-      </tr>
       <?php
       foreach ($data as $row) {
         echo "  
@@ -45,6 +42,12 @@
       }
       ?>
     </tbody>
+    <tfoot>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td><?php echo $conn->query("SELECT COUNT(*) FROM `clicks`")->fetch_row()[0] ?></td>
+    </tfoot>
 
   </table>
   <script>
