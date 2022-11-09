@@ -21,6 +21,39 @@
   $data = $conn->query("SELECT * FROM `links`")->fetch_all();
 
   ?>
+
+  <style>
+    table {
+      border-collapse: collapse;
+      background: #FFFFF0;
+      border: solid green 1px;
+    }
+
+    table tr:nth-child(even) {
+      background: #F0FFFF;
+    }
+
+    table td a {
+      display: block;
+      width: 100%;
+      text-decoration: none;
+    }
+
+    td,
+    th {
+      padding: 10px;
+      text-align: center;
+    }
+
+    td.limited {
+      width: 200px;
+      height: 15px;
+      overflow-x: scroll;
+
+      display: flex;
+      flex-wrap: nowrap;
+    }
+  </style>
   <table>
     <thead>
       <th>Original</th>
@@ -33,7 +66,7 @@
       foreach ($data as $row) {
         echo "  
           <tr>
-            <td>{$row[4]}</td>
+            <td class='limited'>{$row[4]}</td>
             <td>{$row[5]}</td>
             <td>https://stagon.in/r?id={$row[1]}</td>
             <td>{$conn->query("SELECT COUNT(*) FROM `clicks` WHERE link_id = " .$row[0])->fetch_row()[0]}</td>
